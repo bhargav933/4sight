@@ -4,17 +4,17 @@ pipeline {
     stages {
         stage('Npm install') {
             steps {
-                sh 'npm i'
+                sh 'sudo npm i'
             }
         }
         stage('Build') {
             steps {
-                sh 'npm run build'
+                sh 'sudo npm run build'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'copy -r /var/lib/jenkins/workspace/Testing/build/* /var/www/html/'
+                sh 'cp -r /var/lib/jenkins/workspace/4sight/build/* /var/www/html/'
             }
         }
     }
