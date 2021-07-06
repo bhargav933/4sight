@@ -4,17 +4,17 @@ pipeline {
     stages {
         stage('Npm install') {
             steps {
-                bat 'npm i'
+                sh 'npm i'
             }
         }
         stage('Build') {
             steps {
-                bat 'npm run build'
+                sh 'npm run build'
             }
         }
         stage('Deploy') {
             steps {
-                bat 'xcopy %WORKSPACE% C:\\inetpub\\wwwroot'
+                sh 'copy -r /var/lib/jenkins/workspace/Testing/build/* /var/www/html/'
             }
         }
     }
