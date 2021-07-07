@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                bat 'xcopy//%WORKSPACE%// * C:\inetpub\wwwroot'
+                bat 'xcopy//%WORKSPACE%// * C:/inetpub/wwwroot'
             }
         }
     }
