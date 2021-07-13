@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'sudo cp -r /var/lib/jenkins/workspace/demo/* /var/www/html/'
+                sh 'sudo cp -r /var/lib/jenkins/workspace/4sight/* /var/www/html/'
             }
         }
     }
