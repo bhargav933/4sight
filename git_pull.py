@@ -5,7 +5,7 @@ import time
 
 user = 'root'
 password = sys.argv[1]
-cmd = "git pull origin dev"
+cmd = "git pull origin master"
 
 
 def shell_login():
@@ -18,10 +18,10 @@ def shell_login():
 
 
 time.sleep(5)
-os.chdir("C:\inetpub\wwwroot")
-#os.system("pwd")
+os.chdir("/var/www/html")
+os.system("pwd")
 time.sleep(5)
-#os.system("ls -l")
+os.system("ls -l")
 time.sleep(5)
 shell_login()
 time.sleep(5)
