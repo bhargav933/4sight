@@ -5,7 +5,7 @@ import time
 
 user = 'root'
 password = sys.argv[1]
-cmd = "git pull origin master"
+cmd = "git pull origin dev"
 
 
 def shell_login():
