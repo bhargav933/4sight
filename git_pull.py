@@ -18,7 +18,7 @@ def shell_login():
 
 
 time.sleep(5)
-os.chdir("/repo/openemr/")
+os.chdir("C:\inetpub\wwwroot")
 os.system("pwd")
 time.sleep(5)
 os.system("ls -l")
