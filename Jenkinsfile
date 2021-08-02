@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Deploy Image') {
             steps {
-                bat 'docker run -p 3000:3000 -p 3001:3001 -itd 4sight //bin/bash'
+                bat 'docker run -p 100:80 -itd 4sight //bin/bash'
             }
         }
     }
