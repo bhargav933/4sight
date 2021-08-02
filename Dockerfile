@@ -3,4 +3,4 @@ COPY package.json .
 COPY package-lock.json .
 RUN npm install --production
 COPY . .
-CMD [ "npm", "run", "start" ]
+ENTRYPOINT npm start
