@@ -6,6 +6,6 @@ RUN npm install --production
 COPY . .
 CMD ["npm", "run", "build"]
 
-FROM nginx
+FROM nginx:latest
 COPY --from=build /dev/build/* /usr/share/nginx/html/
 CMD ["nginx", "-g", "daemon off"]
