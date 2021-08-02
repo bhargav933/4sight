@@ -1,6 +1,6 @@
 FROM node:12.18.3
-COPY package.json
-COPY package-lock.json
+COPY package.json .
+COPY package-lock.json .
 RUN npm i
 COPY . .
 CMD ["npm", "start"]
