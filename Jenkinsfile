@@ -2,19 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Npm install') {
+        stage('Build Image') {
             steps {
-                bat 'npm i'
+                bat 'docker build -t 4sight .'
             }
         }
-        stage('Build') {
+        stage('Deploy Image') {
             steps {
-                bat 'npm run build'
+                bat 'docker run -p 3000:3000 -p 3001:3001 -itd 4sight //bin/bash'
             }
         }
-        stage('Deploy') {
-            steps {
-                bat 'xcopy //%WORKSPACE%/build//* C:/inetpub/wwwroot'
+//         stage('Deploy') {
+//             steps {
+//                 bat 'xcopy //%WORKSPACE%/build//* C:/inetpub/wwwroot'
             }
         }
     }
