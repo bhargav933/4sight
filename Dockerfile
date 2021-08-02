@@ -4,7 +4,7 @@ COPY package.json .
 COPY package-lock.json .
 RUN npm install --production
 COPY . .
-CMD ["npm", "run", "build"]
+ENTRYPOINT ["npm", "run", "build"]
 
 FROM nginx:latest
 COPY --from=build /dev/build/* /usr/share/nginx/html/
