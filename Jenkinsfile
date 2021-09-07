@@ -1,17 +1,20 @@
 pipeline {
     agent any
-
+    options {
+        timestamps ()
+        disableConCurrentBuilds()
+    }
+    
     stages {
-        stage('Build Image') {
+        stage ('Node-Install') {
             steps {
-                bat 'docker build -t 4sight .'
+                bat 'npm i'
             }
         }
-        stage('Deploy Image') {
+        stage ('Node-Build'){
             steps {
-                bat 'docker run -p 100:80 -itd 4sight //bin/bash'
+                bat 'npm run build'
             }
         }
     }
 }
-
